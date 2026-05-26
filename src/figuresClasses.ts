@@ -5,7 +5,7 @@ export interface Figure {
 }
 
 export class Triangle implements Figure {
-  shape: 'triangle';
+  readonly shape: 'triangle' = 'triangle';
 
   constructor(
     public color: 'red' | 'green' | 'blue',
@@ -22,9 +22,6 @@ export class Triangle implements Figure {
     if (sides[2] >= sides[0] + sides[1]) {
       throw new Error('Triangle is invalid');
     }
-
-    this.color = color;
-    this.shape = 'triangle';
   }
 
   getArea(): number {
@@ -38,7 +35,7 @@ export class Triangle implements Figure {
 }
 
 export class Circle implements Figure {
-  shape: 'circle';
+  readonly shape: 'circle' = 'circle';
 
   constructor(
     public color: 'red' | 'green' | 'blue',
@@ -47,9 +44,6 @@ export class Circle implements Figure {
     if (radius <= 0) {
       throw new Error('Radius must be greater than 0');
     }
-
-    this.color = color;
-    this.shape = 'circle';
   }
 
   getArea(): number {
@@ -60,7 +54,7 @@ export class Circle implements Figure {
 }
 
 export class Rectangle implements Figure {
-  shape: 'rectangle';
+  readonly shape: 'rectangle' = 'rectangle';
 
   constructor(
     public color: 'red' | 'green' | 'blue',
@@ -70,8 +64,6 @@ export class Rectangle implements Figure {
     if (width <= 0 || height <= 0) {
       throw new Error('Both Width and Height must be greater than 0');
     }
-    this.color = color;
-    this.shape = 'rectangle';
   }
 
   getArea(): number {
